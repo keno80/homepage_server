@@ -23,6 +23,8 @@ module.exports = appInfo => {
     // myAppName: 'egg',
   };
 
+  config.proxy = true
+
   return {
     ...config,
     ...userConfig,
