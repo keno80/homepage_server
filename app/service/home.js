@@ -1,4 +1,6 @@
 const Service = require('egg').Service
+const _ = require('lodash')
+import area from '../public/area'
 
 class HomeService extends Service {
   async getNowAdd(ipAddr) {
@@ -15,8 +17,7 @@ class HomeService extends Service {
       dataType: 'json'
     })
 
-    console.log(res.data);
-    // console.log(res.data.toString('utf8'));
+    return area[_.findIndex(area, res.data.city)]
   }
 }
 
